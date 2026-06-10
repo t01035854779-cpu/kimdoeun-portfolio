@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul,
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+img {
+    width: 100%;
+    display: block;
+}
+.wrap {
+    width: 870px;
+    height: 850px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.tab-content {
+    position: relative;
+    display: none;
+    background-size: 100%;
+    height: 850px;
+    z-index: 99;
+}
+.tab-content.active {
+    display: block;
+}
+/*  */
+.tab-btn {
+    cursor: pointer;
+}
+.tab-btn .img1 {
+    /* transform: translateY(10px); */
+}
+.tab-btn .img2 {
+    display: none;
+}
+
+/* 활성화된 탭 */
+.tab-btn.active .img1 {
+    display: none;
+}
+
+.tab-btn.active .img2 {
+    display: block;
+    transform: translateY(-20px);
+}
+/* 탭 */
+.tab-menu {
+    display: flex;
+    width: 670px;
+    align-items: center;
+    justify-content: flex;
+    /* background-color: aqua; */
+    margin-left: auto;
+}
+.tab-btn {
+    transform: translateY(30px);
+    width: calc(100% / 5);
+}
+.about,
+.case-studies,
+.visual-archievs {
+    background: url("../images/표지.png") no-repeat center;
+}
