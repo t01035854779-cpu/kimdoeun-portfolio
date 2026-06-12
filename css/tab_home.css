@@ -1,0 +1,24 @@
+/* 홈 */
+.home img,
+.contact img {
+    height: 100%;
+}
+.video-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 720px;
+    height: 400px;
+    background-color: #000;
+    border: 2px solid #ffd693;
+    overflow: hidden;
+    z-index: 10;
+    outline: 4px solid #ffd693;
+    outline-offset: -4px;
+}
+.video-box video{
+    width: 106%;
+    height:100%;
+    object-fit: cover;
+}
