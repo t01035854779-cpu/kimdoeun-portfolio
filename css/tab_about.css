@@ -99,12 +99,8 @@ a {
     text-align: left;
 }
 .intro-title-1 {
-    margin-top: 52px;
-    font-size: 22px;
-    font-weight: 700;
-    color: #222;
+    margin-top: 35px;
     margin-bottom: 18px;
-    text-align: left;
 }
 
 .intro-content {
@@ -152,4 +148,95 @@ a {
 }
 .log-box-link:hover {
     transform: translateY(-3px);
+}
+/* 에듀케이션 */
+/* --- 1. 공통 섹션 제목 스타일 --- */
+.section-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #222;
+    margin: 60px 0 30px 0; /* 위아래 간격을 충분히 주어 섹션을 구분합니다 */
+    text-align: left;
+    padding-left: 10%; /* 전체적인 정렬 라인을 맞춥니다 */
+}
+
+/* --- 2. Education & Experience (3열 그리드) --- */
+.expression-container {
+    display: flex; /* 💥 3개의 컬럼을 가로로 나란히 배치 */
+    justify-content: center;
+    gap: 20px; /* 컬럼 사이 간격 */
+    padding: 0 1%;
+    margin-bottom: 80px;
+}
+
+.exp-column {
+    flex: 1; /* 3개의 상자가 똑같은 너비를 가집니다 */
+    background-color: #ffffff; /* 기획안의 연한 회갈색 배경 */
+    padding: 25px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.exp-column h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #aaa; /* 제목 밑에 구분선 */
+    padding-bottom: 10px;
+}
+
+.exp-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.exp-list li {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #444;
+}
+
+.exp-main {
+    font-weight: 700; /* 주요 경력 두껍게 */
+    color: #000 !important;
+}
+
+.exp-date {
+    font-size: 13px !important;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* --- 3. Value & Goal (세로 리스트) --- */
+.vision-container {
+    padding: 0 10%;
+    margin-bottom: 100px; /* 마지막 여백 */
+}
+
+.vision-item {
+    background-color: #f9f9f9; /* 밝은 배경 */
+    padding: 20px 30px;
+    margin-bottom: 15px; /* 아이템 사이 간격 */
+    border-left: 5px solid #800000; /* 왼쪽에 시그니처 버건디 포인트 선 */
+    text-align: left;
+}
+
+.vision-num {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    color: #800000; /* 번호와 제목 강조 */
+    margin-bottom: 8px;
+}
+
+.vision-item p {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.vision-item p strong {
+    color: #000;
 }
