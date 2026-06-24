@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="images/235350291.png" />
         <link rel="stylesheet" href="css/index.css" />
         <link rel="stylesheet" href="css/tab_contact.css" />
         <link rel="stylesheet" href="css/tab_home.css" />
@@ -24,10 +25,10 @@
                     <img src="images/about-1.png" alt="어바웃 버튼 " class="img1" />
                     <img src="images/about-2.png" alt="어바웃 버튼" class="img2" />
                 </div>
-                <div class="tab-btn">
+                <!-- <div class="tab-btn">
                     <img src="images/case studies-1.png" alt="케이스 스터디 버튼" class="img1" />
                     <img src="images/case studies-2.png" alt="케이스 스터디 버튼" class="img2" />
-                </div>
+                </div> -->
                 <div class="tab-btn">
                     <img src="images/visual archlves-1.png" alt="비주얼 아카이브 버튼" class="img1" />
                     <img src="images//visual archives-2.png" alt="비주얼 아카이브 버튼" class="img2" />
@@ -42,12 +43,14 @@
                 <img src="images/main_bg.png" alt="" />
                 <!-- 홈 영상 넣기 -->
                 <div class="video-box">
-                    <video src="images/특수영상합성_김도은(전체파트).mp4" loop autoplay muted playsinline></video>
+                    <video src="images/순우리말.mp4" loop autoplay muted playsinline></video>
                 </div>
             </div>
             <div class="tab-content about">
                 <div class="about-top">
-                    <div class="profile-box"></div>
+                    <div class="profile-box">
+                        <img src="images/프로필.png" alt="" />
+                    </div>
                     <div class="profile-right">
                         <div class="info-zone-only">
                             <h3>안녕하세요.<br /><strong>영상 크리에이터 김도은(Kim Doeun)</strong>입니다.</h3>
@@ -60,19 +63,31 @@
                         </div>
                         <div class="skills-btn-group">
                             <div class="skill-item-set">
-                                <div class="skill-box"></div>
+                                <div class="skill-box photoshop">
+                                    <span class="skill-code">Ps</span>
+                                    <!-- <span class="skill-name">Photoshop</span> -->
+                                </div>
                             </div>
 
                             <div class="skill-item-set">
-                                <div class="skill-box"></div>
+                                <div class="skill-box illustrator">
+                                    <span class="skill-code">Ai</span>
+                                    <!-- <span class="skill-name">Illustrator</span> -->
+                                </div>
                             </div>
 
                             <div class="skill-item-set">
-                                <div class="skill-box"></div>
+                                <div class="skill-box aftereffects">
+                                    <span class="skill-code">Ae</span>
+                                    <!-- <span class="skill-name">After Effects</span> -->
+                                </div>
                             </div>
 
                             <div class="skill-item-set">
-                                <div class="skill-box"></div>
+                                <div class="skill-box premiere">
+                                    <span class="skill-code">Pr</span>
+                                    <!-- <span class="skill-name">Premiere Pro</span> -->
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -170,20 +185,36 @@
                 </div>
                 <div class="logs-btn-group">
                     <h3>My Growth Logs</h3>
-                    <div class="log-item-set">
-                        <a href="내블로그주소" target="_blank" class="log-box-link"> </a>
-                    </div>
 
-                    <div class="log-item-set">
-                        <a href="내노션주소" target="_blank" class="log-box-link"></a>
-                    </div>
+                    <div class="logs-flex-container">
+                        <div class="log-item-set">
+                            <a
+                                href="https://section.blog.naver.com/BlogHome.naver?directoryNo=0&currentPage=1&groupId=0"
+                                target="_blank"
+                                class="log-box-link blog"
+                            >
+                                <span class="log-title-ko">블로그</span>
+                                <span class="log-title-en">Blog</span>
+                            </a>
+                        </div>
 
-                    <div class="log-item-set">
-                        <a href="내핀터레스트주소" target="_blank" class="log-box-link"></a>
+                        <div class="log-item-set">
+                            <a href="https://www.notion.com/ko" target="_blank" class="log-box-link notion">
+                                <span class="log-title-ko">노션</span>
+                                <span class="log-title-en">Notion</span>
+                            </a>
+                        </div>
+
+                        <div class="log-item-set">
+                            <a href="https://kr.pinterest.com/" target="_blank" class="log-box-link pinterest">
+                                <span class="log-title-ko">핀터레스트</span>
+                                <span class="log-title-en">Pinterest</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="tab-content case-studies"></div>
+            <!-- <div class="tab-content case-studies"></div> -->
 
             <div class="tab-content visual-archievs">
                 <div class="archives-wrapper">
@@ -192,16 +223,20 @@
 
                         <div class="card-scroll-box">
                             <div class="work-card" onclick="openPopup('video1')">
-                                <div class="video-placeholder-box">
-                                    <span class="placeholder-text">Video 01</span>
-                                    <span class="placeholder-sub">준비중</span>
-                                </div>
+                                <video src="images/순우리말.mp4" autoplay loop muted playsinline></video>
                             </div>
 
                             <div class="work-card" onclick="openPopup('video2')">
                                 <div class="video-placeholder-box">
-                                    <span class="placeholder-text">Video 02</span>
-                                    <span class="placeholder-sub">준비중</span>
+                                    <iframe
+                                        src="https://www.youtube.com/embed/Mc-JG5NXmYQ?autoplay=1&mute=1&loop=1&playlist=Mc-JG5NXmYQ"
+                                        autoplay="1"
+                                        mute="1"
+                                        controls="0"
+                                        frameborder="0"
+                                        allowfullscreen
+                                    >
+                                    </iframe>
                                 </div>
                             </div>
 
@@ -219,10 +254,7 @@
 
                         <div class="card-scroll-box">
                             <div class="work-card" onclick="openPopup('graphic1')">
-                                <div class="graphic-placeholder-box">
-                                    <span class="placeholder-text">Graphic 01</span>
-                                    <span class="placeholder-sub">준비중</span>
-                                </div>
+                                <img src="images/Artboard 1@3x-100.jpg" alt="" />
                             </div>
 
                             <div class="work-card" onclick="openPopup('graphic2')">
@@ -253,7 +285,7 @@
                         <button class="modal-close-btn" onclick="closePopup()">닫기</button>
 
                         <div class="modal-body">
-                            <div class="modal-img-zone">
+                            <div class="modal-img-zone" id="popMediaZone">
                                 <span>Work Detail View</span>
                             </div>
 
@@ -267,7 +299,7 @@
 
                             <div id="popProcessZone" class="modal-process-zone" style="display: none">
                                 <div class="process-step">
-                                    <h4 id="step1Title" class="step-title">1차 시안 제목 자리</h4>
+                                    <h3 id="step1Title" class="step-title">1차 시안 제목 자리</h3>
                                     <div id="step1Info" class="step-box"></div>
                                 </div>
 
@@ -287,10 +319,7 @@
                         <button class="modal-close-btn" onclick="closePopup()">닫기</button>
 
                         <div class="modal-body">
-                            <div class="modal-img-zone">
-                                <span>Work Detail View</span>
-                            </div>
-
+                            <div id="popMediaZone" class="modal-img-zone"></div>
                             <div class="modal-text-zone">
                                 <h3 id="popTitle">프로젝트명 :</h3>
                                 <p id="popPurpose"><strong>목적 :</strong></p>
@@ -308,15 +337,17 @@
                     <p class="contact-title">오늘 읽으신 이 책의 다음 챕터를 함께 쓰고 싶습니다.</p>
                     <p class="contact-email">Email : rlaehdms82@naver.com</p>
                     <div class="button-group">
-                        <a href="#" class="contact-btn">이력서 다운로드</a>
-                        <a href="#" class="contact-btn">Instagram</a>
-                        <a href="#" class="contact-btn">GitHub</a>
-                        <a href="#" class="contact-btn">Blog</a>
+                        <a href="자소서.docx" class="contact-btn"  download>자소서 다운로드</a>
+                        <a href="https://www.instagram.com/" target="_blank" class="contact-btn">Instagram</a>
+                        <a href="https://github.com/" target="_blank" class="contact-btn">GitHub</a>
+                        <a
+                            href="https://section.blog.naver.com/BlogHome.naver?directoryNo=0&currentPage=1&groupId=0"
+                            target="_blank" class="contact-btn"
+                            >Blog</a
+                        >
                     </div>
                 </div>
             </div>
-
-            <!-- 첫화면 -->
         </div>
     </body>
 </html>

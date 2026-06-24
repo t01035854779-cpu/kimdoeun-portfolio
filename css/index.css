@@ -60,7 +60,7 @@ img {
     display: flex;
     width: 670px;
     align-items: center;
-    justify-content: flex;
+    justify-content: flex-end;
     /* background-color: aqua; */
     margin-left: auto;
 }

@@ -11,183 +11,197 @@ a {
     text-decoration: none;
     color: #333;
 }
+/* .video-wrap{
+    width:100%;
+    aspect-ratio:16/9;
+} */
 
 /* 비주얼 아카이브 전체 판 설정 */
 .visual-archievs {
     position: relative;
     background: url("../images/표지.png") no-repeat center;
     background-size: 100% 100%;
-    overflow-y: auto; 
+    overflow-y: auto;
 
+    .archives-wrapper {
+        padding: 128px 8%;
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+    }
 
-.archives-wrapper {
-    padding: 128px 8%;
-    display: flex;
-    flex-direction: column;
-    gap: 60px; 
-}
+    /* --- 2. 섹션 타이틀 (Video Art, Graphic Design) --- */
+    .archive-title {
+        font-size: 26px;
+        font-weight: 500;
+        color: #222;
+        text-align: center;
+        margin-bottom: 25px;
+        font-family: "Malgun Gothic", sans-serif;
+    }
 
-/* --- 2. 섹션 타이틀 (Video Art, Graphic Design) --- */
-.archive-title {
-    font-size: 26px;
-    font-weight: 500;
-    color: #222;
-    text-align: center; 
-    margin-bottom: 25px; 
-    font-family: "Malgun Gothic", sans-serif;
-}
+    /* --- 3. ★핵심★ 옆으로 스크롤되는 가로 상자 --- */
+    .card-scroll-box {
+        display: flex;
+        gap: 30px;
+        overflow-x: auto;
+        padding-bottom: 14px;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+    }
 
-/* --- 3. ★핵심★ 옆으로 스크롤되는 가로 상자 --- */
-.card-scroll-box {
-    display: flex; 
-    gap: 30px; 
-    overflow-x: auto;
+    .card-scroll-box::-webkit-scrollbar {
+        height: 6px;
+    }
+    .card-scroll-box::-webkit-scrollbar-thumb {
+        background-color: #d1c7bd;
+        border-radius: 10px;
+    }
 
-   
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-}
+    /* --- 4. 개별 작품 카드 공통 디자인 --- */
+    .work-card {
+        flex: 0 0 320px;
+        height: 200px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s;
+        overflow: hidden;
+        border: 1px solid #e1e1ee;
+        position: relative;
+    }
+    /* work-card 내부에 들어가는 비디오 조종 */
+    .work-card video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    .work-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    .work-card:hover {
+        /* transform: translateY(-5px);  */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        border: 2px solid #800000;
+    }
 
+    .video-placeholder-box,
+    .graphic-placeholder-box {
+        width: 100%;
+        height: 100%;
 
-.card-scroll-box::-webkit-scrollbar {
-    height: 6px;
-}
-.card-scroll-box::-webkit-scrollbar-thumb {
-    background-color: #d1c7bd;
-    border-radius: 10px;
-}
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+    }
 
-/* --- 4. 개별 작품 카드 공통 디자인 --- */
-.work-card {
-    flex: 0 0 320px;
-    height: 200px; 
-    border-radius: 8px; 
-    cursor: pointer; 
-    transition: all 0.2s; 
-    overflow: hidden; 
-    border: 1px solid #e1e1ee;
-    position: relative;
-}
+    .video-placeholder-box {
+        background-color: #eaeaea;
+    }
+    .video-placeholder-box iframe {
+        pointer-events: none;
+    }
+    iframe {
+        width: 110%;
+        height: 100%;
+        object-fit: contain;
+        border: 0;
+    }
+    .graphic-placeholder-box {
+        background-color: #f3f3f3;
+    }
 
+    .placeholder-text {
+        font-size: 17px;
+        font-weight: 700;
+        color: #888;
+        letter-spacing: 1px;
+    }
 
-.work-card:hover {
-    /* transform: translateY(-5px);  */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); 
-    border: 2px solid #800000; 
-}
+    .placeholder-sub {
+        font-size: 12px;
+        color: #aaa;
+        font-weight: 500;
+    }
 
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+        display: none;
+        align-items: center;
+        justify-content: center;
+    }
 
-.video-placeholder-box,
-.graphic-placeholder-box {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
-    gap: 6px; 
-}
+    .modal-content {
+        background-color: #fff;
+        width: 750px;
+        max-height: 85%;
+        border-radius: 12px;
+        padding: 40px;
+        position: relative;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        overflow-y: auto;
+    }
 
+    /* 팝업창 닫기 버튼 */
+    .modal-close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: #eee;
+        border: none;
+        padding: 6px 14px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 13px;
+        transition: background 0.2s;
+    }
+    .modal-close-btn:hover {
+        background-color: #ddd;
+    }
 
-.video-placeholder-box {
-    background-color: #eaeaea;
-}
+    /* 팝업 내부 정렬 레이아웃 */
+    .modal-body {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 15px;
+    }
 
-.graphic-placeholder-box {
-    background-color: #f3f3f3;
-}
+    .modal-img-zone {
+        width: 100%;
+        /* height: 320px; */
+        background-color: #e0e0e0;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #999;
+        font-weight: 700;
+        font-size: 18px;
+    }
 
-
-.placeholder-text {
-    font-size: 17px;
-    font-weight: 700;
-    color: #888;
-    letter-spacing: 1px; 
-}
-
-
-.placeholder-sub {
-    font-size: 12px;
-    color: #aaa;
-    font-weight: 500;
-}
-
-
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
-    z-index: 9999; 
-    display: none; 
-    align-items: center;
-    justify-content: center; 
-}
-
-
-.modal-content {
-    background-color: #fff;
-    width: 750px; 
-    max-height: 85%; 
-    border-radius: 12px;
-    padding: 40px;
-    position: relative;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-    overflow-y: auto; 
-}
-
-/* 팝업창 닫기 버튼 */
-.modal-close-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: #eee;
-    border: none;
-    padding: 6px 14px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 13px;
-    transition: background 0.2s;
-}
-.modal-close-btn:hover {
-    background-color: #ddd;
-}
-
-/* 팝업 내부 정렬 레이아웃 */
-.modal-body {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    margin-top: 15px;
-}
-
-
-.modal-img-zone {
-    width: 100%;
-    height: 320px;
-    background-color: #e0e0e0;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #999;
-    font-weight: 700;
-    font-size: 18px;
-}
-
-
-.modal-text-zone {
-    text-align: left;
-    font-family: "Malgun Gothic", sans-serif;
-}
-.modal-text-zone h3 {
-    font-size: 19px;
-    margin-bottom: 18px;
-    color: #000;
-    font-weight: 700;
+    .modal-text-zone {
+        text-align: left;
+        font-family: "Malgun Gothic", sans-serif;
+    }
+    .modal-text-zone h3 {
+        font-size: 19px;
+        margin-bottom: 18px;
+        color: #000;
+        font-weight: 700;
+    }
 }
 .modal-text-zone p,
 .modal-text-zone div {
@@ -200,4 +214,76 @@ a {
     color: #000;
     display: inline-block;
     width: 90px;
+}
+
+.modal-process-zone h3 {
+    font-size: 19px;
+    margin-bottom: 18px;
+    color: #000;
+    font-weight: 700;
+    text-align: left;
+    font-family: "Malgun Gothic", sans-serif;
+}
+#popMediaZone {
+    aspect-ratio: 16/9;
+}
+#popMediaZone video,
+#popMediaZone iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.process-arrow-down {
+    text-align: left;
+    font-family: "Malgun Gothic", sans-serif;
+}
+.final {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 23px;
+}
+.process-arrow-down {
+    display: flex;
+    justify-content: center;
+    margin: 19px;
+}
+.step-box p {
+    margin-bottom: 12px;
+    line-height: 1.8;
+}
+.modal-img-zone video,
+.modal-img-zone img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 6px;
+    background-color: #e0e0e0;
+}
+/* 1. 스크롤바 전체 너비/높이 설정 (크기 조종) */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 4px;
+}
+
+/* 2. 스크롤바 바닥 레일 (트랙) 디자인 */
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+/* 3. 실제 마우스로 잡고 움직이는 '스크롤 막대기' (Thumb) 디자인 */
+::-webkit-scrollbar-thumb {
+    background-color: #800000;
+    border-radius: 10px;
+    border: 2px solid transparent;
+}
+
+/* 4. 스크롤 막대기에 마우스를 올렸을 때 (Hover) 색상 변화 */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #5a0000;
+}
+
+/*  */
+.button .modal-close-btn {
+    color: #800000;
 }
