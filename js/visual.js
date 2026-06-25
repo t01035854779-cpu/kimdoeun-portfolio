@@ -39,11 +39,14 @@ const workData = {
         mediaSrc: "images/Artboard 1@3x-100.jpg", // 내 폴더 안의 실제 이미지 경로로 수정하세요!
     },
     graphic2: {
-        title: "준비중",
-        purpose: "준비중",
-        points: "• 준비중<br>• 준비중",
+        title: "스크럽대디 상세페이지",
+        purpose: "스크럽대디라는 상품의 편리성을 알리기위해",
+        points: "• 브랜드 모토와 컨셉에 맞게 상세페이지 디자인<br>• 참신한 디자인",
         desc: "• 준비중",
         contrib: "개인 작업 100%",
+
+        mediaType: "images",
+        mediaSrc: "images/스크럽대디 상세페이지_000.png",
     },
     graphic3: {
         title: "준비중",
@@ -127,9 +130,27 @@ function openPopup(workId) {
     `;
     } else if (data.mediaType === "images") {
         mediaZone.innerHTML = `
-        <img src="${data.mediaSrc}" alt="${data.title}">
+        <div class="modal-img-contnet">
+         <img src="${data.mediaSrc}" alt="${data.title} class="modal-img">
+         <a href="#" style="font-size: 14px;" class="read-more"> MORE </a>   
+         </div>
+       
     `;
     }
+    const moreBtn = document.querySelector(".read-more");
+    const detail = document.querySelector(".modal-img-contnet");
+
+    moreBtn.addEventListener("click", () => {
+        console.log("sdfdsfd");
+
+        detail.classList.toggle("open");
+        //버튼에 글자 변경
+        if (detail.classList.contains("open")) {
+            moreBtn.textContent = "CLOSE";
+        } else {
+            moreBtn.textContent = "MORE";
+        }
+    });
 }
 
 // 팝업창 종료 함수
